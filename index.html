@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Priyanshu's Portfolio</title>
+</head>
+
+<body>
+
+  <canvas id="bg"></canvas>
+
+  <main>
+
+    <header>
+      <h1>Priyanshu Bharadwaj</h1>
+      <p>✨ Welcome to my Portfolio website!</p>
+    </header>
+
+
+    <blockquote>
+      <p>Hey there, I am currently a 2nd Year CSE student and I like making crazy stuffs and projects and curently
+        learning Web 3.0 and Blockchain</p>
+    </blockquote>
+
+    <section>
+      <h2>📜 Profile</h2>
+      <p>
+        Self-starter and passionate second-year Computer Science student with experience in programming outside the
+        university courses and the ability to learn new skills as needed. Aspiring to apply my knowledge gained from
+        both the coursework and personal projects by completing a challenging project as a Google Step Intern
+      </p>
+
+      <p>
+        <b>CONTACT INFO</b><br>
+        phone number - +91 6205984060<br>
+        Mail - priyanshubharadwajp9@gmail.com<br>
+        <a href="https://www.linkedin.com/in/priyanshubharadwaj/">
+          <img src="linkedin.png" alt="HTML5 Icon" style="width:150px;height:70px;"><br>
+        </a>
+        <a href="https://github.com/thelostdeveloper">
+          <img src="gittt.png" alt="HTML5 Icon" style="width:150px;height:70px;"><br>
+        </a>
+      </p>
+
+      <p>
+        <b>EDUCATION</b><br>
+        Bachelor's in Compuer Science<br>
+        ITER Bhubaneshwar<br>
+        2020-2024<br>
+        <b>CGPA - 9.0 (Till 3rd Semester)</b><br>
+        Cources - Data Structure and Algorithms , Calculus , Algorithm Design , Probablity and Statistics , Discrete
+        Maths
+        <br>
+        <b>Skills</b><br>
+        Java
+        Data Structures and Algorithms
+        JavaScript
+        HTML
+        CSS
+        Quick learner
+        C++ basics
+        ML Basics
+      </p>
+
+    </section>
+
+    <section class="light">
+      <h2>👩🏽‍🚀 Projects</h2>
+
+      <p>
+        <b>CricInfo Extactor</b><br>
+        Developed a Javascript code that extracts all details of a particular Series from the CricInfo site and copies
+        them in pdf's arranged in the countries order.
+        <br>
+        Used plugins like pdf-lib for making pdf's excel4node for creating excel files, axios for downloading data from
+        the site .
+        <br>
+        <br>
+        <b>Collage studies relever</b><br>
+        Created a Javascript code for controlling my online collage classes and getting notified upon calling my name or
+        roll number.
+        <br>
+        Used puppeteer extra , plugin sleath and json files for storing my time table and login informations.
+        <br>
+      </p>
+
+      <h2>🏆 Accomplishments</h2>
+
+      <p>
+        <b>Google Hash Code 2022</b><br>
+        Given the very first attempt of HashCode and secured an All India Rank of 992 and Collage Rank 1 <br><br>
+        <b>Smart India Hackathon 2022</b><br>
+        Selected as one of the teams from my collage to represent in smart india hackathon and will be working on the
+        blockchain and security domain.<br><br>
+        <b>2⭐ on CodeChef and 3⭐ on Leetcode</b><br><br>
+        <b>Solved more than 450+ DSA qustions</b><br><br>
+        <b>Successfully completed HacktoberFest 2020</b><br><br>
+        <b>Participated in HackOn Hackathon and secured runners up rank</b>
+      </p>
+
+    </section>
+
+    <blockquote>
+      <p>Any fool can write code that a computer can understand. Good programmers write code that humans can
+        understand.<br>–Martin Fowler</p>
+    </blockquote>
+
+    <section class="left">
+      <h2>🌮 Work Experience</h2>
+
+      <h3>Summer Inern at ZoloStays</h3>
+      <p>
+        Contributed in Human Resource management policies and also helped the company set a mark in markting domain
+      </p>
+      <h3>Github Campus Expert</h3>
+      <p>
+        Exploring as well as improving the Tech Community in the campus.
+      </p>
+      <h3>Incoming SWE at DPS Germany</h3>
+      <p>
+        Got selected as a software engineer intern at Digital Product School, Germany and will be working for 2 months
+        on a real world project.
+      </p>
+
+    </section>
+
+    <blockquote>
+      <p>At last if you have reached here then Thanks a lot !! for reviewing my work if you liked it and has some work
+        releated to my tech then feel free to ping me up.</p>
+    </blockquote>
+
+
+  </main>
+
+  <!-- <script type="module" src="/main.js"></script> -->
+
+  <script src="https://threejs.org/build/three.js"></script>
+  <script src="https://unpkg.com/browse/three@0.97.0/examples/js/controls/OrbitControls.js"></script>
+  <script>
+
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    const renderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('#bg'),
+    });
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.position.setZ(30);
+    camera.position.setX(-3);
+
+    renderer.render(scene, camera);
+
+    // Torus
+
+    const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+    const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
+    const torus = new THREE.Mesh(geometry, material);
+
+    scene.add(torus);
+
+    // Lights
+
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(5, 5, 5);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff);
+    scene.add(pointLight, ambientLight);
+
+    // Helpers
+
+    // const lightHelper = new THREE.PointLightHelper(pointLight)
+    // const gridHelper = new THREE.GridHelper(200, 50);
+    // scene.add(lightHelper, gridHelper)
+
+    // const controls = new OrbitControls(camera, renderer.domElement);
+
+    function addStar() {
+      const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+      const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+      const star = new THREE.Mesh(geometry, material);
+
+      const [x, y, z] = Array(3)
+        .fill()
+        .map(() => THREE.MathUtils.randFloatSpread(100));
+
+      star.position.set(x, y, z);
+      scene.add(star);
+    }
+
+    Array(200).fill().forEach(addStar);
+
+    // Background
+
+    const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+    scene.background = spaceTexture;
+
+    // Avatar
+
+    const jeffTexture = new THREE.TextureLoader().load('priyanshu.png');
+
+    const jeff = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: jeffTexture }));
+
+    scene.add(jeff);
+
+    // Moon
+
+    const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+    const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+
+    const moon = new THREE.Mesh(
+      new THREE.SphereGeometry(3, 32, 32),
+      new THREE.MeshStandardMaterial({
+        map: moonTexture,
+        normalMap: normalTexture,
+      })
+    );
+
+    scene.add(moon);
+
+    moon.position.z = 30;
+    moon.position.setX(-10);
+
+    jeff.position.z = -5;
+    jeff.position.x = 2;
+
+    // Scroll Animation
+
+    function moveCamera() {
+      const t = document.body.getBoundingClientRect().top;
+      moon.rotation.x += 0.05;
+      moon.rotation.y += 0.075;
+      moon.rotation.z += 0.05;
+
+      jeff.rotation.y += 0.01;
+      jeff.rotation.z += 0.01;
+
+      camera.position.z = t * -0.01;
+      camera.position.x = t * -0.0002;
+      camera.rotation.y = t * -0.0002;
+    }
+
+    document.body.onscroll = moveCamera;
+    moveCamera();
+
+    // Animation Loop
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      torus.rotation.x += 0.01;
+      torus.rotation.y += 0.005;
+      torus.rotation.z += 0.01;
+
+      moon.rotation.x += 0.005;
+
+      // controls.update();
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+  </script>
+
+</body>
+
+</html>
